@@ -1,0 +1,22 @@
+import os
+
+os.system ("cls || clear")
+
+#Entrada
+login_correto = "gustavoporo823@gmail.com"
+senha_correta = "gu120314"
+
+login = str(input("Digite seu login:"))
+senha = str(input("Digite sua senha:"))
+
+#Processamento
+
+if login != login_correto:
+    print("Email nao encontrado")
+elif senha != senha_correta:
+    print("Login não encontrado")
+else: 
+    print("Bem-vindo")      
+
+
+
