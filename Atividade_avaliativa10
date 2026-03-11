@@ -1,0 +1,42 @@
+import os
+os.system ("cls || clear")
+
+# Definição dos preços fixos
+PRECO_GASOLINA = 6.59
+PRECO_ALCOOL = 3.79
+
+# Entrada de dados
+litros = float(input("Digite a quantidade de litros vendidos: "))
+tipo = input("Digite o tipo de combustível (A-álcool, G-gasolina): ").upper()
+
+valor_total = 0
+
+# Lógica para Álcool
+if tipo == 'A':
+    if litros <= 20:
+        desconto = 0.03  # 3%
+    else:
+        desconto = 0.05  # 5%
+    preco_com_desconto = PRECO_ALCOOL * (1 - desconto)
+    valor_total = litros * preco_com_desconto
+
+# Lógica para Gasolina
+elif tipo == 'G':
+    if litros <= 20:
+        desconto = 0.04  # 4%
+    else:
+        desconto = 0.06  # 6%
+    preco_com_desconto = PRECO_GASOLINA * (1 - desconto)
+    valor_total = litros * preco_com_desconto
+
+else:
+    print("Tipo de combustível inválido!")
+
+# Exibição do resultado
+if valor_total > 0:
+    print("-" * 30)
+    combustivel_nome = "Álcool" if tipo == 'A' else "Gasolina"
+    print(f"Combustível: {combustivel_nome}")
+    print(f"Quantidade: {litros}L")
+    print(f"Valor total a pagar: R$ {valor_total:.2f}")
+    print("-" * 30)

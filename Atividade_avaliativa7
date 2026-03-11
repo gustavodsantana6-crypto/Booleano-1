@@ -1,0 +1,30 @@
+import os
+os.system ("cls || clear")
+
+# Entrada de dados
+produto = input("Digite a descrição do produto (nome): ")
+quantidade = int(input(f"Digite a quantidade adquirida de {produto}: "))
+preco_unitario = float(input("Digite o preço unitário: R$ "))
+
+# Cálculo do total bruto
+total = quantidade * preco_unitario
+
+# Definição do percentual de desconto
+if quantidade <= 5:
+    percentual_desconto = 0.02  # 2%
+elif quantidade <= 10:
+    percentual_desconto = 0.03  # 3%
+else:
+    percentual_desconto = 0.05  # 5%
+
+# Cálculos finais
+valor_desconto = total * percentual_desconto
+total_a_pagar = total - valor_desconto
+
+# Exibição dos resultados
+print("-" * 30)
+print(f"Produto: {produto}")
+print(f"Total Bruto: R$ {total:.2f}")
+print(f"Desconto ({percentual_desconto*100:.0f}%): R$ {valor_desconto:.2f}")
+print(f"Total a Pagar: R$ {total_a_pagar:.2f}")
+print("-" * 30)

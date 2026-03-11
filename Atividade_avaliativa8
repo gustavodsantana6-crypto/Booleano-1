@@ -1,0 +1,25 @@
+import os
+os.system ("cls || clear")
+
+# Entrada da cor do CD
+# O .lower() serve para aceitar "VERDE", "Verde" ou "verde"
+cor = input("Digite a cor do CD (Verde, Azul, Amarelo ou Vermelho): ").lower()
+
+# Lógica de decisão para associar cor ao preço
+if cor == "verde":
+    preco = 10.00
+elif cor == "azul":
+    preco = 20.00
+elif cor == "amarelo":
+    preco = 30.00
+elif cor == "vermelho":
+    preco = 40.00
+else:
+    preco = None
+
+# Exibição do resultado
+print("-" * 30)
+if preco is not None:
+    print(f"O CD de cor {cor.capitalize()} custa: R$ {preco:.2f}")
+else:
+    print("Cor inválida! Por favor, escolha entre as cores da tabela.")

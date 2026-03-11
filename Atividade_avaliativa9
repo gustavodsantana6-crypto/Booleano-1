@@ -1,0 +1,29 @@
+import os
+os.system ("cls || clear")
+
+# Entrada de dados
+renda_mensal = float(input("Digite a sua renda mensal: R$ "))
+valor_emprestimo = float(input("Digite o valor total do empréstimo solicitado: R$ "))
+num_prestacoes = int(input("Digite o número de prestações desejado: "))
+
+# Cálculos de limite
+limite_total_emprestimo = renda_mensal * 10
+valor_prestacao = valor_emprestimo / num_prestacoes
+limite_prestacao = renda_mensal * 0.30
+
+# Verificação das condições
+# Condição 1: Empréstimo até 10x a renda
+# Condição 2: Prestação até 30% da renda
+print("-" * 30)
+
+if valor_emprestimo <= limite_total_emprestimo and valor_prestacao <= limite_prestacao:
+    print("EMPRÉSTIMO CONCEDIDO!")
+    print(f"O valor da sua prestação será de: R$ {valor_prestacao:.2f}")
+else:
+    print("EMPRÉSTIMO NEGADO.")
+    
+    # Exibição dos motivos para transparência
+    if valor_emprestimo > limite_total_emprestimo:
+        print(f"- O valor total excede o limite de 10x sua renda (R$ {limite_total_emprestimo:.2f}).")
+    if valor_prestacao > limite_prestacao:
+        print(f"- A prestação de R$ {valor_prestacao:.2f} excede 30% da sua renda (R$ {limite_prestacao:.2f}).")

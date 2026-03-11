@@ -1,0 +1,22 @@
+import os
+os.system ("cls || clear")
+
+nome = input("Digite o seu nome: ")
+sexo = input("Digite o sexo (M/F): ").upper()  # .upper() padroniza para maiúsculo
+estado_civil = input("Digite o estado civil: ").upper()
+
+tempo_casada = None # Variável iniciada como vazia
+
+# Verificação da condição específica
+if sexo == "F" and estado_civil == "CASADA":
+    tempo_casada = input("Há quantos anos você está casada? ")
+
+# Exibição dos dados
+print("\n--- Dados do Usuário ---")
+print(f"Nome: {nome}")
+print(f"Sexo: {sexo}")
+print(f"Estado Civil: {estado_civil}")
+
+# Só mostra o tempo de casada se a variável foi preenchida
+if tempo_casada:
+    print(f"Tempo de casada: {tempo_casada} anos")

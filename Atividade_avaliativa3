@@ -1,0 +1,20 @@
+import os
+os.system ("cls || clear")
+
+a = int(input("Digite o valor de A: "))
+b = int(input("Digite o valor de B: "))
+
+# Estrutura de decisão
+if a == b:
+    # Se forem iguais, soma
+    c = a + b
+    operacao = "soma"
+else:
+    # Se forem diferentes, multiplica
+    c = a * b
+    operacao = "multiplicação"
+
+# Saída de dados
+print("-" * 30)
+print(f"Os valores são {'iguais' if a == b else 'diferentes'}.")
+print(f"O resultado da {operacao} (variável C) é: {c}")
